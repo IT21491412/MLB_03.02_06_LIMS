@@ -2,13 +2,16 @@
 class claim {
 private:
 	char Claim_ID[10];
-	char Type[3];
+	int Type;
 	char MID[6];
 	char AID[6];
 
 public:
-	void claims(const char claimid[], const char type[], const char mid[], const char aid[]);
+	claim();
+	claim(const char claimid[], int type);
+	void setClaim(const char claimid[], int type, const char mid[], const char aid[]);
 	void Review();
 	void Approval();
 	void DisplayClaimDetails();
+	~claim();
 };

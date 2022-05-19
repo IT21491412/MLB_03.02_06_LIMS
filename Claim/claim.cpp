@@ -4,13 +4,19 @@
 
 using namespace std;
 
+claim::claim() {
 
-void claim::claims(const char claimid[],const char type[],const char mid[],const char aid[]) {
-	strcpy_s(Claim_ID, claimid);
-	strcpy_s(Type, type);
-	strcpy_s(MID, mid);
-	strcpy_s(AID, aid);
 }
+ claim::claim(const char claimid[],int type) {
+	strcpy_s(Claim_ID, claimid);
+	Type = type;
+}
+ void claim::setClaim(const char claimid[], int type, const char mid[], const char aid[]) {
+	 strcpy_s(Claim_ID, claimid);
+	 Type = type;
+	 strcpy_s(MID, mid);
+	 strcpy_s(AID, aid);
+ }
 void claim::Review() {
 
 }
@@ -23,5 +29,8 @@ void claim::DisplayClaimDetails() {
 	cout << "Type : " << Type << endl;
 	cout << "Manager ID : " << MID << endl;
 	cout << "AID  : " << AID << endl;
+}
+claim::~claim() {
+	cout << "Claim deleted." << endl;
 }
 
